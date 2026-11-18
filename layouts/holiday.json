@@ -1,0 +1,234 @@
+{
+  "id": "root",
+  "type": "row",
+  "theme": "holiday",
+  "titlebar": "none",
+  "traffic_lights": [
+    12,
+    16
+  ],
+  "background": {
+    "image": "mods/holiday-brand/night.jpg",
+    "fit": "cover"
+  },
+  "padding": 8,
+  "gap": 8,
+  "divider": {
+    "width": 0,
+    "color": "#00000000"
+  },
+  "colors": {
+    "accent": "#f5c451",
+    "chrome": "#00000000",
+    "canvas": "#08100e",
+    "background": "#0f1a17",
+    "surface": "#15241f",
+    "raised": "#1d3029",
+    "border": "#f5c45126",
+    "hover": "#f5c45114",
+    "selected": "#f5c4511f",
+    "working": "#5eb1ef",
+    "blocked": "#e5484d",
+    "done": "#46a758",
+    "idle": "#8aa397"
+  },
+  "terminal_padding": [
+    16,
+    14
+  ],
+  "terminal_opacity": 0,
+  "preview": "layouts/holiday.png",
+  "children": [
+    {
+      "id": "sidebar",
+      "type": "column",
+      "size": {
+        "px": 268
+      },
+      "min": 44,
+      "max": 480,
+      "resizable": false,
+      "border": {
+        "width": 1,
+        "color": "#ffffff2e"
+      },
+      "radius": 14,
+      "background": "#03060580",
+      "shadow": "md",
+      "children": [
+        {
+          "id": "brand",
+          "type": "block",
+          "size": {
+            "px": 50
+          },
+          "window_drag": true,
+          "content": {
+            "mod": "holiday-brand"
+          }
+        },
+        {
+          "id": "sidebar-lists",
+          "type": "column",
+          "children": [
+            {
+              "id": "spaces",
+              "type": "block",
+              "size": {
+                "weight": 2
+              },
+              "min": 90,
+              "content": {
+                "mod": "spaces"
+              }
+            },
+            {
+              "id": "agents",
+              "type": "block",
+              "size": {
+                "weight": 3
+              },
+              "min": 90,
+              "content": {
+                "mod": "agents"
+              }
+            }
+          ]
+        },
+        {
+          "id": "sidebar-footer",
+          "type": "block",
+          "size": {
+            "px": 69
+          },
+          "content": {
+            "mod": "holiday-brand",
+            "props": {
+              "footer": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "work",
+      "type": "column",
+      "gap": 4,
+      "resizable": false,
+      "children": [
+        {
+          "id": "tabs",
+          "type": "block",
+          "size": {
+            "px": 42
+          },
+          "window_drag": true,
+          "content": {
+            "mod": "tabs"
+          },
+          "border": {
+            "width": 1,
+            "color": "#f5c45126"
+          },
+          "radius": 12,
+          "background": "#0c1613e0"
+        },
+        {
+          "id": "lights",
+          "type": "block",
+          "size": {
+            "px": 24
+          },
+          "content": {
+            "mod": "holiday-lights"
+          }
+        },
+        {
+          "id": "work-body",
+          "type": "row",
+          "gap": 8,
+          "children": [
+            {
+              "id": "main",
+              "type": "block",
+              "content": {
+                "tab": "active",
+                "pane": {
+                  "gap": 8,
+                  "radius": 14,
+                  "background": "#03060580",
+                  "lone": true,
+                  "border": {
+                    "width": 1,
+                    "color": "#ffffff2e"
+                  },
+                  "focus": {
+                    "width": 1.5,
+                    "color": "#f5c451"
+                  },
+                  "header": {
+                    "content": {
+                      "mod": "pane"
+                    },
+                    "height": 30,
+                    "position": "top",
+                    "reveal": "always"
+                  }
+                }
+              }
+            },
+            {
+              "id": "panel",
+              "type": "column",
+              "hidden": true,
+              "size": {
+                "px": 368
+              },
+              "min": 280,
+              "max": 900,
+              "children": [
+                {
+                  "id": "panel-body",
+                  "type": "stack",
+                  "active": "files",
+                  "children": [
+                    {
+                      "id": "files",
+                      "type": "block",
+                      "content": {
+                        "mod": "files"
+                      }
+                    },
+                    {
+                      "id": "changes",
+                      "type": "block",
+                      "content": {
+                        "mod": "changes"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "status",
+          "type": "block",
+          "size": {
+            "px": 28
+          },
+          "content": {
+            "mod": "holiday-status"
+          },
+          "border": {
+            "width": 1,
+            "color": "#f5c45126"
+          },
+          "radius": 12,
+          "background": "#0c1613e0"
+        }
+      ]
+    }
+  ]
+}
